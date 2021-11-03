@@ -16,16 +16,24 @@ Product.init(
       autoIncrement: true,
     },
     product_name: {
-
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     price: {
-
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false,
     },
     stock: {
-
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
     category_id: {
-
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'category',
+        key: 'id',
+        unique: false
+      }
     },
   },
   {
